@@ -1,0 +1,413 @@
+    /* الحمد لله وكفى وسلاما على منِ اصطفى المُصطفى خير من اصطفى 
+    اللهم صل وسلم وبارك عليه */
+    /* max-width: 767px  
+     يعني حيملا الشاشة للجوال هذا الحجم  */
+
+/* Start Variables */
+*{ 
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: rgb(255, 255, 255);
+    font-family: 'Work Sans', sans-serif; 
+    height: 2200px;
+}
+/* @media (prefers-color-scheme: dark) {
+    body {
+        background-color: black;
+    }
+}
+  @media (prefers-color-scheme: light) {
+    body {
+        color: white;
+    }
+} */
+:root {
+    --main-color: #10cab7;
+    --section-background: #f6f6f6;
+    --line-height: 1.8;
+    --color-sec: #777;
+}
+/* End Variables */
+/* Start Global */
+
+.container {  
+    background: rgb(255, 255, 255);
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+/* X-Small Screen*/
+@media  (max-width:766px){
+    .container {
+        width:100%;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}
+/* Small Screen*/
+@media (min-width:768px){
+    .container {
+        width:745px;
+    }
+}
+/* Normal Screen*/
+@media (min-width:992px){
+    .container {
+        width:970px;
+    }
+}
+/* Large Screen*/
+@media (min-width:1200px){
+    .container {
+        width:1170px;
+    }
+}
+ /* End Globle */
+ /* Start Header  */
+ .header {
+    padding: 20px;
+ }
+.header .container{
+    display: flex;
+    justify-content:space-between;
+    align-items: center; /* عشان يكونوا متوسطين على نفس السطر */
+}
+.header .logo {width:65px}
+.header .links {position:relative;}
+.header .links:hover .icon span:nth-child(2) { 
+    width: 100%;
+}
+
+.header .icon {
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap; /* عشان لما العناصر تملا الشاشة تنزل تحت  */
+    justify-content:flex-end; /* x الجستفاي كونتنت لمحور الاكس  */
+}
+.header .icon span{
+    width: 30px;
+    margin-bottom: 5px;
+    background-color: rgb(34, 33, 33);
+    
+}
+ /*          الرمز تبع الساندوتش             */
+.header .icon span:first-child {
+    height: 3px;
+    width: 100%;
+}
+.header .icon span:nth-child(2) {
+    height: 3px;
+    width: 60%;
+}
+.header .icon span:last-child {
+    height: 4px;
+    width: 100%;
+}
+.header .links ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    background-color: #f2f2f2;
+    position:absolute;
+    right:0; /* عشان تبدا من اول اليمين  */
+    top: cal(100% + 15px);
+    min-width: 130px;
+    display: none;
+    z-index: 1;
+}
+.header .links:hover ul{
+    display:block;
+    
+}
+.header .links ul:before {
+    content: "";
+    border-width: 10px;
+    border-color: transparent transparent #f2f2f2 transparent;
+    border-style: solid;
+    position:absolute;
+    right: 5px;
+    top:-20px;
+}
+.header .links ul li a {
+    text-decoration: none;
+    color:#555;
+    display: block;
+    font-weight:500;
+    padding-bottom:3px;
+    padding-top:15px;
+    border-bottom: #ddd solid 1px;
+}
+.slideshow {
+    background-image: url(../imges/mountain.jfif);
+    background-size: cover;
+    height: calc(100vh - 64px);
+    position: relative;
+}
+.slideshow .intro-text {
+    position: absolute;
+    bottom: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 330px;
+    max-width: 100%;
+    text-align:center;
+}
+.slideshow .intro-text h1 {
+    margin: 5px;
+    color: var(--main-color);
+    font-size: 52px;
+    font-weight:bolder;
+}
+.slideshow img p {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.8;
+}
+/* End Header */
+/* Start Features */
+.features {
+    background-color: var(--section-background);
+}
+.features .container {    
+    background-color: var(--section-background);
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.features .container .feat {
+    text-align: center;
+    padding: 20px;
+}
+.features .container .feat i{
+    color:var(--main-color);
+}
+.features .container .feat h3{
+    font-weight: 800;
+    margin: 30px 0;
+}
+.features .container .feat p{
+    line-height: 1.8;
+    color: #777;
+    font-size: 17px;
+}
+@media (max-width: 766px){
+    .features .container {
+    width: 100%;
+    padding-left: 25px;
+    padding-right: 25px; 
+}
+}
+/* End Features */
+/*      Start Services      */
+.special-heading {
+    color: #ebeced;
+    font-size: 100px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: -3px;
+    margin: 0;
+}
+.special-heading + p {
+    margin: -30px 0 0;
+    font-size: 20px;
+    text-align: center;
+    color: #797979;
+}
+.services {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+  .services .services-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 30px;
+    margin-top: 100px;
+  }
+  .services .services-content .srv {
+    display: flex;
+    margin-bottom: 40px;
+  }
+  @media (max-width: 767px) {
+    .services .services-content .srv {
+      flex-direction: column; 
+      text-align: center;
+    }
+}
+  .services .services-content .srv i {
+    color: var(--main-color);
+    flex-basis: 60px;
+}
+  .services .services-content .srv .text {
+    flex: 1;
+}
+  .services .services-content .srv .text h3 {
+    margin: 0 0 20px;
+}
+.h33 {
+    margin-bottom:30px;
+}
+.services .services-content .srv .text p {
+    color: #444;
+    font-weight: 300;
+    line-height: 1.6;
+}
+  .services .services-content .image {
+    text-align: center;
+    position: relative;
+}
+
+  .services .services-content .image img {
+    width: 270px;
+}
+  @media (max-width: 1199px) {
+    .image-column {
+      display: none;
+    }
+}
+.col img {
+    width: 200px;
+}
+ 
+/* Start portfolio */
+.portfolio {
+    background: var(--section-background);
+    padding-top:60px;
+    padding-bottom:60px;
+}
+.portfolio .container {
+    background: var(--section-background);    
+}
+.portfolio .main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(300px, 1fr));
+    gap: 25px;
+    padding-top: 60px;
+}
+    /* عرض شاشات الموبايل بتكون في حدود (300px : 450px) 
+    وعرض شاشات التابلت في حدود (700px : 1100px) 
+    واشهر شاشات اللابتوب (1366px) */
+@media (min-width: 300px) and (max-width:780px){
+  .portfolio .main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+
+.portfolio .main .card {
+    background-color: #fff;
+    width: 320px;
+}
+.portfolio .main .card img {
+    max-width: 100%;
+}
+
+.portfolio .main .card p{
+    color: #777;
+    line-height: 1.6;
+    margin-bottom: 0;
+    padding: 10px;
+}
+
+/* End portfolio */
+/* Start About */
+.about {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.about .container .about-sec {
+    display: flex;
+    margin-top: 60px;
+    flex: 1;
+    flex-wrap: wrap;
+    padding-right: 33px;
+}
+.noor {
+    width: 44%;
+}
+.about .container .about-sec img {
+    width: 250px;
+}
+.about .container .card {
+    flex-basis: calc(100% - 500px);
+}
+.about .container .card p:first-child {
+    font-weight: bold;
+    line-height: 2;
+    margin-bottom: 50px;
+}
+.about .container .card p:last-child {
+    line-height: 2;
+    color: #777;
+}
+hr {
+    width: 50%;
+    display: inline-block;
+    border-color: var(--main-color);
+}
+
+/* End About */
+/* Start Contact */
+.contact{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.contact .contact-sec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.contact .contact-sec h3{
+    font-size: 35px;
+    font-weight: 900;
+    color: rgb(44 71 85);
+    letter-spacing: -2px;
+    margin-top: 65px;
+}
+
+.contact .contact-sec a {
+    text-decoration: none;
+    color: var(--main-color);
+    font-size: 35px;
+    font-weight: 800;
+    margin-top: -7px;
+}
+.contact .contact-sec p {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+/* End Contact */
+
+.footer {
+ display: flex;   
+}
+.footer h3 {
+    color: #fff;
+    background-color: #2c4755;
+    padding: 30px 10px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0;
+}
+.footer span {
+    color: var(--main-color);
+}
+
+/* تم بحمد الله 
+        بس في ال من نحن في مشكلة في النص 1- 
+        2- وفي البروتوفايل في  مشكلة 
+        2021 - 20 - 5 
+*/
